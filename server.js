@@ -5,11 +5,13 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne={
-title : 'Article-One | Pratik Patil',
-heading:'Article-One',
-date: '8 Aug 2017',
-content:`<p>
+var articles={ 
+    
+        var articleOne:{
+        title : 'Article-One | Pratik Patil',
+        heading:'Article-One',
+        date: '8 Aug 2017',
+        content:`<p>
             This is the content for my article This is the content for my articleThis is the content for my articleThis is the content for my articleThis is the content for my articleThis is the content for my article
          </p>
          <p>
@@ -17,24 +19,25 @@ content:`<p>
          </p>
          <p>
          This is the content for my article This is the content for my articleThis is the content for my articleThis is the content for my articleThis is the content for my articleThis is the content for my article
-         </p>`,
-};
+         </p>`
+        },
 
-var articleTwo={
-title : 'Article-two | Pratik Patil',
-heading:'Article-Two',
-date: '8 Aug 2017',
-content:  ` <p>This is the content for my second article </p>  `,
     
-};
+        var articleTwo:{
+        title : 'Article-two | Pratik Patil',
+        heading:'Article-Two',
+        date: '8 Aug 2017',
+        content:  ` <p>This is the content for my second article </p>  `,
+    
+        },
 
-var articleThree={
-title : 'Article-three | Pratik Patil',
-heading:'Article-Three',
-date: '8 Aug 2017',
-content:  ` <p>This is the content for my third article </p>  `,    
+        var articleThree:{
+        title : 'Article-three | Pratik Patil',
+        heading:'Article-Three',
+        date: '8 Aug 2017',
+        content:  ` <p>This is the content for my third article </p>  `,    
+        },
 };
-
 function createTemplate(data){
 var title = data.title;
 var date = data.date;
