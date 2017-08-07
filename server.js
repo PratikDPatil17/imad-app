@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 var articles= { 
     
-         articleOne: {
+         'article-one': {
         title : 'Article-One | Pratik Patil',
         heading:'Article-One',
         date: '8 Aug 2017',
@@ -23,7 +23,7 @@ var articles= {
         },
 
     
-         articleTwo:{
+         'article-two':{
         title : 'Article-two | Pratik Patil',
         heading:'Article-Two',
         date: '8 Aug 2017',
@@ -31,7 +31,7 @@ var articles= {
     
         },
 
-         articleThree:{
+         'article-three':{
         title : 'Article-three | Pratik Patil',
         heading:'Article-Three',
         date: '8 Aug 2017',
@@ -77,17 +77,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one',function(req,res){
-    res.send(createTemplate(articleOne));
+app.get('/:articleName',function(req,res){
+    
+    res.send(createTemplate(articles(articleName)));
 });
 
-app.get('/article-two',function(req,res){
-    res.send(cretateTemplate(articleTwo));
-});
 
-app.get('/article-three',function(req,res){
-    res.send(createTemplate(articleThree));
-});
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
