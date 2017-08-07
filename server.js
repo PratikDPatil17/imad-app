@@ -20,6 +20,20 @@ content:`<p>
          </p>`,
 };
 
+var articleTwo={
+title : 'Article-two | Pratik Patil',
+heading:'Article-Two',
+date: '8 Aug 2017',
+content:  ` <p>This is the content for my second article </p>  `,
+    
+};
+
+var articleThree={
+title : 'Article-three | Pratik Patil',
+heading:'Article-Three',
+date: '8 Aug 2017',
+content:  ` <p>This is the content for my third article </p>  `,    
+};
 
 function createTemplate(data){
 var title = data.title;
@@ -65,11 +79,11 @@ app.get('/article-one',function(req,res){
 });
 
 app.get('/article-two',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+    res.send(cretateTemplate(articleTwo));
 });
 
 app.get('/article-three',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+    res.send(createTemplate(articleThree));
 });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
